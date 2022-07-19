@@ -4,6 +4,10 @@
 
 /* common style or utilities */
 
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
     font-family: 'Poppins', sans-serif;
     background-color: #F3F1FF;
@@ -22,6 +26,52 @@ main{
 }
 hr{
     border: 1px solid #D1D1D1;
+}
+
+/* Header style */
+
+header{
+    
+    background-color: #562EFF;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0px;
+    width: 870px;
+}
+.header .logo{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.header .logo>img{
+    height: 45px;
+    width: 45px;
+}
+.header .logo span{
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}
+nav{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.menu-bar ul{
+    display: flex;
+    gap: 25px;
+    list-style-type: none;
+}
+.menu-bar ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 /* top players styles */
@@ -102,7 +152,8 @@ hr{
 
 .courses{
     display: flex;
-   justify-content: space-around;
+   gap: 25px;
+   
 }
 .course{
     width: 270px;
@@ -148,4 +199,83 @@ hr{
 }
 .course-duration .fa-clock{
     margin-right: 8px;
+}
+
+/* Media queries */
+
+/* Mobile devices */
+
+@media  only screen and (max-width:688px) {
+    
+    .header{
+        width: 100%;
+        padding: 5px 15px;
+    }
+    .header .logo{
+        gap: 8px;
+    }
+    .header .logo img{
+        height: 30px;
+        width: 30px;
+    }
+    .header .logo span{
+        font-size: 18px;
+    }
+    .menu-bar ul{
+        flex-direction: column;
+        gap: 3px;
+    }
+    
+    .container, .blog{
+        width: 100%;
+    }
+    .top-players > h2,.top-blogs > h2, .courses-section > h2, .blog-info{
+text-align: center;
+margin-bottom: 30px;
+    }
+    .players,.blogs{
+        
+        grid-template-columns: repeat(1,1fr);
+    }
+    .player, .blog, .courses{
+        flex-direction: column;
+    }
+
+   .blog, .courses{
+       align-items: center;
+   }
+    .courses{
+        gap: 25px;
+    }
+}
+
+/* tablet */
+
+@media only screen and (min-width:688px) and (max-width:900px) {
+    .header{
+        justify-content: space-around;
+    }
+    
+    .container{
+        width: 100%;
+    }
+    
+    .players,.blogs{
+        
+        grid-template-columns: repeat(2,1fr);
+    }
+    .players{
+       padding-left: 110px;
+    }
+    .blogs{
+        justify-items: center;
+    }
+    h2{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .courses{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
